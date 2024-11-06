@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Adrian Marcelo Pienso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación con botón de menú para dispositivos móviles -->
+    <nav class="navigation">
+        <button class="menu-icon" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
+            <button onclick="scrollToSection('about')">Acerca de mí</button>
+            <button onclick="scrollToSection('experience')">Experiencia de Trabajo</button>
+            <button onclick="scrollToSection('skills')">Habilidades Técnicas</button>
+            <button onclick="scrollToSection('human-skills')">Human Skills</button>
+            <button onclick="scrollToSection('languages')">Idiomas</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="photo">
+            <img src="img/FotoPerfil.jpg" alt="Foto de Adrian Marcelo Pienso">
+        </div>
+        <div class="info">
+            <h1>Adrian Marcelo Pienso</h1>
+            <p>BI & Data Analytics - Full Stack Developer - Software Architect</p>
+            <p><strong>VILLA DOMÍNICO, ARGENTINA</strong> | <strong>Movilidad:</strong> Cualquier Lugar</p>
+            <p>Email: familystyle@outlook.es | Teléfono: +5491151610270</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Secciones del CV -->
+        <section id="about">
+            <h2>Acerca de mí</h2>
+            <p>
+                Tengo 52 años y un empleo estable en una compañía multinacional de telecomunicaciones.
+                <br>En mis años de trabajo ininterrumpido, he desarrollado una serie de habilidades en gestión de datos, desarrollo autónomo de aplicaciones web y de gestión, análisis y automatización de procesos administrativos con python, y metodologias ágiles (Lean, Scrum, Kamban, XP).
+                <br>Mi intención es aprovechar el tiempo que he ganado con el uso de nuevas tecnologías y utilizarlo para colaborar con emprendimientos que necesiten apoyo en las áreas que domino.
+                <br>Contactame por cualquier consulta a mi whatsapp o mail.
+            </p>
+
+        </section>
+
+        <section id="experience">
+            <h2>Experiencia de Trabajo</h2>
+            <div class="job">
+                <h3>Analista Sr. - Movistar</h3>
+                <span class="date">May. 2007 - Actualidad (17 años)</span>
+                <p>Piñeyro, Avellaneda</p>
+                <p>Desarrollo de aplicaciones web para intranet, automatización de reportes con Python, y creación de tableros de gestión con MicroStrategy y PowerBI.</p>
+            </div>
+            <div class="job">
+                <h3>Empleado - Condis Supermercats (Barcelona-España)</h3>
+                <span class="date">May. 2002 - Jun. 2007 (5 años)</span>
+                <p>Control de Pedidos.</p>
+            </div>
+            <div class="job">
+                <h3>Administrativo Dpto Legal - Vanguardia S.A.</h3>
+                <span class="date">jun. 1990 - Abr 1994 (4 años)</span>
+                <p>Barracas, Ciudad Autónoma de Buenos Aires</p>
+                <p>Redacción de contratos, contestaciones de demandas, preparación licitaciones</p>
+            </div>
+
+        </section>
+
+        <section id="skills">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li>Programación front-end (CSS/CSS3, HTML/HTML5)</li>
+                <li>Access, Excel - Aplicaciones de negocio del paquete Office</li>
+                <li>Bases de datos SQL y herramientas de integración de datos</li>
+                <li>Metodologías Agile y Lean (Scrum, Kaizen, Lean Six Sigma)</li>
+                <li>MicroStrategy, PowerBI - Visualización de datos</li>
+                <li>Gestión de privacidad y seguridad de datos</li>
+            </ul>
+        </section>
+
+        <section id="human-skills">
+            <h2>Human Skills</h2>
+            <p>Acelerar y simplificar, Comunicación Efectiva, Creatividad e innovación, Curiosidad, Resolución de conflictos, Trabajo en equipo, entre otros.</p>
+        </section>
+
+        <section id="languages">
+            <h2>Idiomas</h2>
+            <p>Español nativo</p>
+            <p>Inglés básico</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Adrian Marcelo Pienso</p>
+    </footer>
+
+    <!-- Botón flotante para regresar arriba -->
+    <button onclick="scrollToTop()" class="back-to-top">↑</button>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
