@@ -3,110 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum Vitae - Adrian Marcelo Pienso</title>
+    <title>Currículum Vitae — Adrian Marcelo Pienso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <div class="navigation">
         <button class="menu-icon" onclick="toggleMenu()">☰</button>
         <div class="nav-links">
             <button onclick="scrollToSection('about')">Acerca de mí</button>
-            <button onclick="scrollToSection('experience')">Experiencia de Trabajo</button>
-            <button onclick="scrollToSection('skills')">Habilidades Técnicas</button>
+            <button onclick="scrollToSection('experience')">Experiencia</button>
+            <button onclick="scrollToSection('skills')">Habilidades</button>
             <button onclick="scrollToSection('human-skills')">Human Skills</button>
             <button onclick="scrollToSection('languages')">Idiomas</button>
-            <!-- Nuevo botón de WhatsApp -->
             <a href="https://api.whatsapp.com/send/?phone=5491151610270&text=Hola+Adrian%21" target="_blank" class="whatsapp-button">WhatsApp</a>
+            <button onclick="openPdfModal()" class="pdf-button">⬇ Descargar CV</button>
         </div>
     </div>
 
-
+    <div id="cv-content">
     <header>
         <div class="photo">
             <img src="img/FotoPerfil.jpg" alt="Foto de Adrian Marcelo Pienso">
         </div>
         <div class="info">
             <h1>Adrian Marcelo Pienso</h1>
-            <p>BI & Data Analytics - Full Stack Developer - Software Architect</p>
-            <p><strong>VILLA DOMÍNICO, ARGENTINA</strong> | <strong>Movilidad:</strong> Cualquier Lugar</p>
-            <p>Email: familystyle@outlook.es | Teléfono: +5491151610270</p>
+            <p class="tagline">Análisis de Procesos · Logística &amp; Operaciones · Automatización · BI &amp; Analytics</p>
+            <p><strong>Villa Domínico, Argentina</strong> <span class="separator">|</span> <strong>Disponibilidad:</strong> Remoto / Cualquier Lugar</p>
+            <p>familystyle@outlook.es <span class="separator">|</span> +54 9 11 5161-0270</p>
         </div>
     </header>
 
     <main>
-        <!-- Secciones del CV -->
+
         <section id="about">
             <h2>Acerca de mí</h2>
             <p>
-                Tengo 52 años y un empleo estable en una compañía multinacional de telecomunicaciones.
-                <br>En mis años de trabajo ininterrumpido, he desarrollado una serie de habilidades en gestión de datos, desarrollo autónomo de aplicaciones web y de gestión, análisis y automatización de procesos administrativos con python, y metodologias ágiles (Lean, Scrum, Kamban, XP).
-                <br>Mi intención es aprovechar el tiempo que he ganado con el uso de nuevas tecnologías y utilizarlo para colaborar con emprendimientos que necesiten apoyo en las áreas que domino.
-                <br>Contactame por cualquier consulta a mi whatsapp o mail.
+                Tengo <strong><span id="age"></span> años</strong> y más de <strong><span id="movistar-years"></span> años</strong> de trayectoria ininterrumpida en Movistar Argentina, desempeñándome como analista orientado a la optimización de procesos operativos, control de la cadena logística y gestión eficiente de flujos de información.
             </p>
-
+            <br>
+            <p>
+                A lo largo de mi carrera me especialicé en la gestión integral de la cadena logística —tanto directa como inversa—, aplicando metodologías LEAN para la mejora continua y administrando grandes volúmenes de datos operativos y comerciales con SQL Server y SAP.
+            </p>
+            <br>
+            <p>
+                Combino una comprensión profunda de las necesidades del negocio con capacidad técnica autónoma para diseñar e implementar soluciones de punta a punta: desarrollo de aplicaciones web internas para la gestión operativa (PHP, JavaScript), automatización de procesos y tareas administrativas con Python, y diseño de tableros de control e indicadores clave (KPI) en Power BI y MicroStrategy.
+            </p>
+            <br>
+            <p>
+                Busco aportar mi experiencia en análisis de procesos, logística y tecnología a nuevos desafíos y equipos.
+                <a href="https://api.whatsapp.com/send/?phone=5491151610270&text=Hola+Adrian%21" target="_blank">Escribime por WhatsApp</a> o por mail.
+            </p>
         </section>
 
         <section id="experience">
-            <h2>Experiencia de Trabajo</h2>
+            <h2>Experiencia</h2>
+
             <div class="job">
-                <h3>Analista Sr. - Movistar</h3>
-                <span class="date">May. 2007 - Actualidad (17 años)</span>
-                <p>Piñeyro, Avellaneda</p>
-                <p>Desarrollo de aplicaciones web para intranet, automatización de reportes con Python, y creación de tableros de gestión con MicroStrategy y PowerBI.</p>
-            </div>
-            <div class="job">
-                <h3>Empleado - Condis Supermercats (Barcelona-España)</h3>
-                <span class="date">May. 2002 - Jun. 2007 (5 años)</span>
-                <p>Control de Pedidos.</p>
-            </div>
-            <div class="job">
-                <h3>Administrativo Dpto Legal - Vanguardia S.A.</h3>
-                <span class="date">jun. 1990 - Abr 1994 (4 años)</span>
-                <p>Barracas, Ciudad Autónoma de Buenos Aires</p>
-                <p>Redacción de contratos, contestaciones de demandas, preparación licitaciones</p>
+                <div class="job-header">
+                    <h3>Analista — Movistar Argentina</h3>
+                    <span class="date">May. 2007 – Actualidad <span id="movistar-duration"></span></span>
+                </div>
+                <p class="job-location">Piñeyro, Avellaneda</p>
+                <ul>
+                    <li>Análisis, diseño y optimización de procesos operativos aplicando metodologías LEAN y mejora continua.</li>
+                    <li>Gestión y seguimiento de la cadena logística integral: logística directa, logística inversa y flujos de información.</li>
+                    <li>Gestión y análisis de datos masivos con SQL Server y consultas/transacciones en SAP.</li>
+                    <li>Diseño, implementación y mantenimiento de tableros de indicadores de gestión (KPIs) en MicroStrategy y Power BI.</li>
+                    <li>Desarrollo y mantenimiento de aplicaciones web para la gestión operativa e intranet (PHP, HTML, CSS, JavaScript).</li>
+                    <li>Automatización de reportes, conciliaciones y procesos administrativos recurrentes mediante scripts en Python.</li>
+                </ul>
             </div>
 
+            <div class="job">
+                <div class="job-header">
+                    <h3>Empleado — Condis Supermercats</h3>
+                    <span class="date">May. 2002 – Jun. 2007 · 5 años</span>
+                </div>
+                <p class="job-location">Barcelona, España</p>
+                <p>Control de pedidos, abastecimiento y logística de distribución.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Administrativo Dpto. Legal — Vanguardia S.A.</h3>
+                    <span class="date">Jun. 1990 – Abr. 1994 · 4 años</span>
+                </div>
+                <p class="job-location">Barracas, Ciudad Autónoma de Buenos Aires</p>
+                <p>Redacción de contratos y contestaciones de demandas. Preparación de licitaciones.</p>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Habilidades Técnicas</h2>
-            <ul>
-                <li>Programación front-end (CSS/CSS3, HTML/HTML5)</li>
-                <li>Programación back-end (php, SQL Server)</li>
-                <li>Access, Excel - Aplicaciones de negocio del paquete Office</li>
-                <li>Bases de datos SQL y herramientas de integración de datos</li>
-                <li>Procesamiento de imagenes con Gimp</li>
-                <li>Procesamiento de Audio, Multitrack Reaper, Audacity, VLC</li>
-                <li>Metodologías Agile y Lean (Scrum, Kaizen, Lean Six Sigma)</li>
-                <li>MicroStrategy, PowerBI - Visualización de datos</li>
-                <li>Gestión de privacidad y seguridad de datos</li>
-            </ul>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <h4>Procesos &amp; Logística</h4>
+                    <div class="tags">
+                        <span class="tag">Logística Directa</span>
+                        <span class="tag">Logística Inversa</span>
+                        <span class="tag">Flujos de Información</span>
+                        <span class="tag">Control Operativo</span>
+                        <span class="tag">Mejora Continua</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Gestión de Datos &amp; ERP</h4>
+                    <div class="tags">
+                        <span class="tag highlight">SQL Server</span>
+                        <span class="tag highlight">SAP</span>
+                        <span class="tag">Datos Masivos</span>
+                        <span class="tag">Modelado de Datos</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Business Intelligence &amp; KPI</h4>
+                    <div class="tags">
+                        <span class="tag highlight">Power BI</span>
+                        <span class="tag highlight">MicroStrategy</span>
+                        <span class="tag">Tableros de Control</span>
+                        <span class="tag">Data Analytics</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Desarrollo &amp; Automatización</h4>
+                    <div class="tags">
+                        <span class="tag highlight">Python (Automatización)</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 / CSS3</span>
+                        <span class="tag">Apps de Gestión</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Metodologías de Trabajo</h4>
+                    <div class="tags">
+                        <span class="tag">LEAN</span>
+                        <span class="tag">Kaizen</span>
+                        <span class="tag">Lean Six Sigma</span>
+                        <span class="tag">Scrum</span>
+                        <span class="tag">Kanban</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Herramientas</h4>
+                    <div class="tags">
+                        <span class="tag">Excel avanzado</span>
+                        <span class="tag">Access</span>
+                        <span class="tag">GIMP</span>
+                        <span class="tag">Reaper</span>
+                        <span class="tag">Audacity</span>
+                        <span class="tag">Privacidad de datos</span>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section id="human-skills">
             <h2>Human Skills</h2>
-            <p>Acelerar y simplificar, Comunicación Efectiva, Creatividad e innovación, Curiosidad, Resolución de conflictos, Trabajo en equipo, Resiliencia y Adaptabilidad, Atención al Detalle, Orientación al Aprendizaje, Paciencia y Persistencia, Capacidad de Organización, Confianza y Apertura para Recibir Feedback, entre otros.</p>
+            <div class="tags">
+                <span class="tag soft">Pensamiento analítico</span>
+                <span class="tag soft">Resolución de problemas</span>
+                <span class="tag soft">Orientación a la mejora continua</span>
+                <span class="tag soft">Trabajo en equipo</span>
+                <span class="tag soft">Adaptabilidad</span>
+                <span class="tag soft">Atención al detalle</span>
+                <span class="tag soft">Organización y priorización</span>
+                <span class="tag soft">Comunicación efectiva</span>
+                <span class="tag soft">Orientación al cliente interno</span>
+            </div>
         </section>
-       
 
         <section id="languages">
             <h2>Idiomas</h2>
-            <p>Español nativo</p>
-            <p>Inglés básico</p>
+            <div class="language-grid">
+                <div class="language-item">
+                    <span class="lang-name">Español</span>
+                    <span class="lang-level native">Nativo</span>
+                </div>
+                <div class="language-item">
+                    <span class="lang-name">Inglés</span>
+                    <span class="lang-level basic">Básico</span>
+                </div>
+            </div>
         </section>
+
     </main>
-    
+
     <footer>
-        <p>&copy; 2024 Adrian Marcelo Pienso</p>
+        <p>&copy; <span id="footer-year"></span> Adrian Marcelo Pienso</p>
     </footer>
 
-    <!-- Botón flotante para regresar arriba -->
-    <button onclick="scrollToTop()" class="back-to-top">↑</button>
+    </div><!-- #cv-content -->
+
+    <button onclick="scrollToTop()" class="back-to-top" title="Volver arriba">↑</button>
+
+    <!-- Modal PDF -->
+    <div id="pdf-modal" class="modal-overlay" onclick="closePdfModal(event)">
+        <div class="modal-box">
+            <h3>Acceso protegido</h3>
+            <p>Ingresá el token de acceso para descargar el CV en PDF.</p>
+            <input type="password" id="token-input" placeholder="Token de acceso" autocomplete="off">
+            <p id="token-error" class="token-error"></p>
+            <div class="modal-actions">
+                <button onclick="validateAndDownload()" class="btn-primary">Descargar</button>
+                <button onclick="closePdfModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        function calcAge(dob) {
+            const today = new Date();
+            const birth = new Date(dob);
+            let age = today.getFullYear() - birth.getFullYear();
+            const m = today.getMonth() - birth.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+            return age;
+        }
+
+        function calcYears(startDate) {
+            const start = new Date(startDate);
+            const now = new Date();
+            let years = now.getFullYear() - start.getFullYear();
+            const m = now.getMonth() - start.getMonth();
+            if (m < 0 || (m === 0 && now.getDate() < start.getDate())) years--;
+            return years;
+        }
+
+        function calcDuration(startDate) {
+            const start = new Date(startDate);
+            const now = new Date();
+            let years = now.getFullYear() - start.getFullYear();
+            let months = now.getMonth() - start.getMonth();
+            if (months < 0) { years--; months += 12; }
+            if (months === 0) return `(${years} años)`;
+            return `(${years} años, ${months} mes${months !== 1 ? 'es' : ''})`;
+        }
+
+        document.getElementById('age').textContent = calcAge('1972-04-03');
+        document.getElementById('movistar-years').textContent = calcYears('2007-05-01');
+        document.getElementById('movistar-duration').textContent = calcDuration('2007-05-01');
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToTop() {
@@ -114,9 +266,145 @@
         }
 
         function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        function openPdfModal() {
+            document.getElementById('token-input').value = '';
+            document.getElementById('token-error').textContent = '';
+            document.getElementById('pdf-modal').classList.add('visible');
+            setTimeout(() => document.getElementById('token-input').focus(), 120);
+        }
+
+        function closePdfModal(event) {
+            if (!event || event.target === document.getElementById('pdf-modal')) {
+                document.getElementById('pdf-modal').classList.remove('visible');
+            }
+        }
+
+        document.getElementById('token-input').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') validateAndDownload();
+        });
+
+        function validateAndDownload() {
+            const token = document.getElementById('token-input').value.trim();
+            if (token !== 'V4LORAP') {
+                document.getElementById('token-error').textContent = 'Token incorrecto. Intentá de nuevo.';
+                document.getElementById('token-input').value = '';
+                document.getElementById('token-input').focus();
+                return;
+            }
+            document.getElementById('pdf-modal').classList.remove('visible');
+            generatePdf();
+        }
+
+        function generatePdf() {
+            document.getElementById('pdf-age').textContent            = calcAge('1972-04-03');
+            document.getElementById('pdf-movistar-years').textContent = calcYears('2007-05-01');
+            document.getElementById('pdf-movistar-dur').textContent   = calcDuration('2007-05-01');
+
+            const prev = document.title;
+            document.title = 'CV_AdrianPienso';
+            setTimeout(() => {
+                window.print();
+                setTimeout(() => { document.title = prev; }, 2000);
+            }, 80);
         }
     </script>
+
+    <!-- ==================== PDF TEMPLATE (offscreen, A4-optimized) ==================== -->
+    <div id="cv-pdf">
+        <!-- Header -->
+        <div class="pdft-header">
+            <img src="img/FotoPerfil.jpg" class="pdft-photo" alt="Adrian Pienso">
+            <div class="pdft-header-info">
+                <h1>Adrian Marcelo Pienso</h1>
+                <p class="pdft-tagline">Análisis de Procesos · Logística &amp; Operaciones · Automatización · BI &amp; Analytics</p>
+                <p>Villa Domínico, Argentina &nbsp;|&nbsp; Disponibilidad: Remoto / Cualquier Lugar</p>
+                <p>familystyle@outlook.es &nbsp;|&nbsp; +54 9 11 5161-0270</p>
+            </div>
+        </div>
+
+        <!-- Acerca de mí -->
+        <div class="pdft-section">
+            <h2>Acerca de mí</h2>
+            <p>Tengo <strong><span id="pdf-age"></span> años</strong> y más de <strong><span id="pdf-movistar-years"></span> años</strong> de trayectoria ininterrumpida en Movistar Argentina como analista de procesos y operaciones. Especializado en la optimización de la cadena logística integral (directa e inversa), metodologías LEAN y análisis de datos masivos con SQL Server y SAP. Diseño e implemento soluciones técnicas de gestión: tableros de KPIs en Power BI y MicroStrategy, automatización de procesos con Python y aplicaciones web para la operativa interna.</p>
+        </div>
+
+        <!-- Experiencia -->
+        <div class="pdft-section">
+            <h2>Experiencia</h2>
+
+            <div class="pdft-job">
+                <div class="pdft-job-header">
+                    <strong>Analista — Movistar Argentina</strong>
+                    <span class="pdft-date">May. 2007 – Actualidad &nbsp;<span id="pdf-movistar-dur"></span></span>
+                </div>
+                <p class="pdft-loc">Piñeyro, Avellaneda</p>
+                <ul>
+                    <li>Análisis y optimización de procesos operativos aplicando metodologías LEAN y mejora continua.</li>
+                    <li>Gestión y seguimiento de la cadena logística integral (logística directa, logística inversa y flujos de información).</li>
+                    <li>Gestión y explotación de datos masivos con SQL Server y consultas/transacciones en SAP.</li>
+                    <li>Diseño de tableros de KPIs en MicroStrategy y Power BI · Desarrollo de aplicaciones web internas (PHP, JS).</li>
+                    <li>Automatización de reportes, conciliaciones y procesos administrativos con Python.</li>
+                </ul>
+            </div>
+
+            <div class="pdft-job">
+                <div class="pdft-job-header">
+                    <strong>Empleado — Condis Supermercats</strong>
+                    <span class="pdft-date">May. 2002 – Jun. 2007 · 5 años</span>
+                </div>
+                <p class="pdft-loc">Barcelona, España &nbsp;—&nbsp; Control de pedidos, abastecimiento y logística de distribución.</p>
+            </div>
+
+            <div class="pdft-job">
+                <div class="pdft-job-header">
+                    <strong>Administrativo Dpto. Legal — Vanguardia S.A.</strong>
+                    <span class="pdft-date">Jun. 1990 – Abr. 1994 · 4 años</span>
+                </div>
+                <p class="pdft-loc">Barracas, CABA &nbsp;—&nbsp; Redacción de contratos, contestaciones de demandas, preparación de licitaciones.</p>
+            </div>
+        </div>
+
+        <!-- Habilidades (2 columnas) -->
+        <div class="pdft-section">
+            <h2>Habilidades</h2>
+            <div class="pdft-skills-cols">
+                <div class="pdft-col">
+                    <h3>Técnicas &amp; Procesos</h3>
+                    <ul>
+                        <li><strong>Procesos &amp; Logística:</strong> Logística directa/inversa, Flujos de información, LEAN</li>
+                        <li><strong>Datos &amp; ERP:</strong> SQL Server (datos masivos), SAP</li>
+                        <li><strong>BI &amp; KPIs:</strong> Power BI, MicroStrategy, Tableros de control</li>
+                        <li><strong>Desarrollo:</strong> Python (Automatización), PHP, JavaScript, HTML5/CSS3</li>
+                        <li><strong>Metodologías:</strong> LEAN, Kaizen, Lean Six Sigma, Scrum, Kanban</li>
+                        <li><strong>Ofimática/Otros:</strong> Excel avanzado, Access, GIMP, Reaper, Audacity</li>
+                    </ul>
+                </div>
+                <div class="pdft-col">
+                    <h3>Competencias Operativas</h3>
+                    <ul>
+                        <li>Pensamiento analítico</li>
+                        <li>Resolución de problemas</li>
+                        <li>Orientación a la mejora continua</li>
+                        <li>Trabajo en equipo interdisciplinario</li>
+                        <li>Atención al detalle y calidad</li>
+                        <li>Organización y priorización</li>
+                        <li>Orientación al cliente interno</li>
+                        <li>Comunicación efectiva</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="pdft-section">
+            <h2>Idiomas</h2>
+            <p><strong>Español</strong> — Nativo &nbsp;·&nbsp; <strong>Inglés</strong> — Básico</p>
+        </div>
+    </div>
+    <!-- ==================== /PDF TEMPLATE ==================== -->
+
 </body>
 </html>
